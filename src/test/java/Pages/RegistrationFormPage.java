@@ -1,11 +1,16 @@
 package Pages;
 
+import Pages.components.CalendarComponent;
+import Pages.components.ResultTableComponent;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationFormPage {
+   public CalendarComponent calendarComponent=new CalendarComponent();
+   public ResultTableComponent resultTableComponent=new ResultTableComponent();
 
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
@@ -68,4 +73,13 @@ public class RegistrationFormPage {
         return this;
     }
 
+    public RegistrationFormPage setDateOfBirth(String day, String month, String year) {
+        $("#dateOfBirthInput").click();
+        calendarComponent.SetDate(day, month, year);
+        return this;
+    }
+    public RegistrationFormPage checkResult (String key, String value) {
+        resultTableComponent.checkResult(key,value);
+        return this;
+    }
 }

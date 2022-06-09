@@ -38,7 +38,8 @@ public class RegistrationFormTest extends TestBase{
                 .setGender(Gender)
                 .setState(State)
                 .setCity(City)
-                .setHobbie(Hobbie);
+                .setHobbie(Hobbie)
+                .setDateOfBirth("30", "may", "2000");
 
 
 //        $("#firstName").setValue(firstName);
@@ -63,7 +64,10 @@ public class RegistrationFormTest extends TestBase{
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
 
-        $(".table-responsive").shouldHave(text(firstName), text(lastName), text(email), text(Tel),
-                text("Male"), text("Maths"), text("Sports"), text("Some street 1"),
-                text("30 May,2000"), text ("NCR"), text("Delhi"));
-}}
+        registrationFormPage.checkResult("Student Name", firstName + " " + lastName).checkResult("Student Email", email)
+                .checkResult("Mobile",Tel).checkResult("Gender",Gender).checkResult("Date of Birth",,);
+
+//        $(".table-responsive").shouldHave(text(firstName), text(lastName), text(email), text(Tel),
+//                text("Male"), text("Maths"), text("Sports"), text("Some street 1"),
+//                text("30 May,2000"), text ("NCR"), text("Delhi"));
+    }}
