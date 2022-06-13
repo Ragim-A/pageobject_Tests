@@ -2,6 +2,9 @@ package Pages;
 
 import Pages.components.CalendarComponent;
 import Pages.components.ResultTableComponent;
+import Utils.RandomGenerator;
+
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -46,7 +49,7 @@ public class RegistrationFormPage {
     }
 
     public RegistrationFormPage setAdress(String value){
-    $("#currentAddress").setValue("Some street 1");
+    $("#currentAddress").setValue(value);
         return this;
     }
 
@@ -69,7 +72,6 @@ public class RegistrationFormPage {
     public RegistrationFormPage setCity(String value){
     $("#city").click();
     $("#stateCity-wrapper").$(byText(value)).click();
-    $("#submit").click();
         return this;
     }
 
@@ -78,8 +80,20 @@ public class RegistrationFormPage {
         calendarComponent.SetDate(day, month, year);
         return this;
     }
+     public RegistrationFormPage setFilename(String value){
+        $("#uploadPicture").uploadFromClasspath("img/"+value);
+        return this;
+    }
     public RegistrationFormPage checkResult (String key, String value) {
         resultTableComponent.checkResult(key,value);
+        return this;
+    }
+    public RegistrationFormPage clickSubmit () {
+        $("#submit").click();
+        return this;
+    }
+    public RegistrationFormPage checkSubmitting (){
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         return this;
     }
 }
