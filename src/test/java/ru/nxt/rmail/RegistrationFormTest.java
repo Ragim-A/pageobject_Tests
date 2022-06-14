@@ -12,15 +12,15 @@ public class RegistrationFormTest extends TestBase{
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)
-                .setTel(Tel)
-                .setSubjects(Subject)
-                .setAdress(Adress)
-                .setGender(Gender)
-                .setState(State)
-                .setCity(City)
-                .setDateOfBirth(Date,Month,Year)
-                .setFilename(FileName)
-                .setHobbie(Hobbie)
+                .setTel(tel)
+                .setSubjects(subject)
+                .setAdress(adress)
+                .setGender(gender)
+                .setState(state)
+                .setCity(city)
+                .setDateOfBirth(date,month,year)
+                .setFilename(fileName)
+                .setHobbie(hobbie)
                 .clickSubmit();
 
 //Проверка таблицы с результатами
@@ -28,13 +28,13 @@ public class RegistrationFormTest extends TestBase{
                 .checkSubmitting()
                 .checkResult("Student Name", firstName + " " + lastName)
                 .checkResult("Student Email", email)
-                .checkResult("Mobile",Tel)
-                .checkResult("Gender",Gender)
-                .checkResult("Date of Birth",Date+" "+Month+","+Year)
-                .checkResult("Subjects", Subject)
-                .checkResult("Hobbies", Hobbie)
-                .checkResult("Picture",FileName)
-                .checkResult("Address", Adress)
-                .checkResult("State and City",State+" "+City);
+                .checkResult("Mobile",tel)
+                .checkResult("Gender",gender)
+                .checkResult("Date of Birth",date+" "+month+","+year)
+                .checkResult("Subjects", subject)
+                .checkResult("Hobbies", hobbie)
+                .checkResult("Picture",fileName)
+                .checkResult("Address", adress)
+                .checkResult("State and City",state+" "+city);
 
     }}

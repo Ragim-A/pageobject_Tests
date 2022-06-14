@@ -1,7 +1,7 @@
 package ru.nxt.rmail;
 
 
-import Pages.RegistrationFormPage;
+import pages.RegistrationFormPage;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 

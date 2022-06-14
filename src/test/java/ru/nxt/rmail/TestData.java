@@ -1,23 +1,24 @@
 package ru.nxt.rmail;
 
-import Utils.RandomGenerator;
+import utils.RandomGenerator;
 import com.github.javafaker.Faker;
 public class TestData {
     static Faker faker = new Faker();
 
-    public final static
-    String firstName = faker.gameOfThrones().dragon();
+    public final
+
+    static String firstName = faker.gameOfThrones().dragon();
     static String lastName = faker.funnyName().name();
-    static String Gender = RandomGenerator.randomGender();
+    static String gender = RandomGenerator.randomGender();
     static String email = faker.internet().emailAddress();
-    static String Tel = faker.number().digits(10);
-    static String Subject = RandomGenerator.randomSubject();
-    static String Hobbie = RandomGenerator.randomHobby();
-    static String Adress = faker.chuckNorris().fact();
-    static String State = "NCR";
-    static String City = "Delhi";
-    static String Date= String.valueOf(faker.number().numberBetween(1,28));
-    static String Month= RandomGenerator.randomMonths();
-    static String Year = String.valueOf(faker.number().numberBetween(1950,2000));
-    static String FileName = RandomGenerator.randomFile();
+    static String tel = faker.number().digits(10);
+    static String subject = RandomGenerator.randomSubject();
+    static String hobbie = RandomGenerator.randomHobby();
+    static String adress = faker.chuckNorris().fact();
+    static String state = "NCR";
+    static String city = "Delhi";
+    static String date= String.valueOf(faker.number().numberBetween(1,28));
+    static String month= RandomGenerator.randomMonths();
+    static String year = String.valueOf(faker.number().numberBetween(1950,2000));
+    static String fileName = RandomGenerator.randomFile();
 }

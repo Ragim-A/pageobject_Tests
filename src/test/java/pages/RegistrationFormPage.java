@@ -1,10 +1,7 @@
-package Pages;
+package pages;
 
-import Pages.components.CalendarComponent;
-import Pages.components.ResultTableComponent;
-import Utils.RandomGenerator;
-
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+import pages.components.CalendarComponent;
+import pages.components.ResultTableComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
