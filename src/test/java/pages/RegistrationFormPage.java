@@ -74,7 +74,7 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage setDateOfBirth(String day, String month, String year) {
         $("#dateOfBirthInput").click();
-        calendarComponent.SetDate("4", "2", "1989");
+        calendarComponent.SetDate("4", "december", "1989");
         return this;
     }
      public RegistrationFormPage setFilename(String value){
