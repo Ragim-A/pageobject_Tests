@@ -17,8 +17,8 @@ public class TestData {
     static String adress = faker.chuckNorris().fact();
     static String state = "NCR";
     static String city = "Delhi";
-    static String date= String.valueOf(faker.number().numberBetween(1,28));
-    static String month= RandomGenerator.randomMonths();
-    static String year = String.valueOf(faker.number().numberBetween(1950,2000));
+    static String date= "05";
+    static String month= "May";
+    static String year = "1989";
     static String fileName = RandomGenerator.randomFile();
 }
